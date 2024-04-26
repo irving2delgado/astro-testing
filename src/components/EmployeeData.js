@@ -29,7 +29,6 @@ console.log("Employee Salary:", employeeData.salary);
 
 
 <div class="container">
-        <!-- Employee data cards -->
         <div class="employee-card">
             <h2>{employees[0].name}</h2>
             <div class="employee-info">
@@ -70,4 +69,5 @@ console.log("Employee Salary:", employeeData.salary);
                 <strong>Salary:</strong> ${employees[4].salary}
             </div>
         </div>
+    </div>
     </div>

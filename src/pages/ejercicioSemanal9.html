@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox and jQuery Example</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      border: 2px solid black;
+      background-color: white; /* Set initial background color */
+    }
+
+    .colored {
+      background-color: lightblue; /* Define color when colored class is applied */
+    }
+
+    .rounded {
+      border-radius: 10px; /* Apply rounded borders */
+    }
+
+    .description {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="box" id="box1"></div>
+  <div class="box" id="box2"></div>
+  <div class="box" id="box3"></div>
+</div>
+
+<h2>Toggles</h2>
+
+<div class="container">
+  <button id="toggleColors">Toggle Colors</button>
+  <button id="toggleBorders">Toggle Rounded Borders</button>
+  <button id="addBox">Add a New Box</button>
+</div>
+
+<h2>Descriptions:</h2>
+<ul id="descriptionList">
+  <li>Toggle Colors: Toggles the color on and off for each box using CSS classes</li>
+  <li>Toggle Rounded Borders: Toggles the rounded-borders on and off for each box using CSS attributes</li>
+  <li>Add a New Box: Adds one new box to the container.</li>
+</ul>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Toggle colors of boxes
+    $('#toggleColors').click(function() {
+      $('.box').toggleClass('colored');
+    });
+
+    // Toggle rounded borders of boxes
+    $('#toggleBorders').click(function() {
+      $('.box').toggleClass('rounded');
+    });
+
+    // Add a new box
+    $('#addBox').click(function() {
+      $('.container').append('<div class="box"></div>');
+    });
+  });
+</script>
+</body>
+</html>
